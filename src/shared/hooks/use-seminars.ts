@@ -1,7 +1,7 @@
-import { useSeminarsStore } from '@/app/store/seminars';
 import { useEffect } from 'react';
+import { useSeminarsStore, SeminarsState } from '../store/seminar';
 
-export const useSeminars = () => {
+export const useSeminars = (): SeminarsState => {
   const seminarsState = useSeminarsStore((state) => state);
   useEffect(() => {
     seminarsState.fetchSeminars();
